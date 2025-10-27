@@ -14,7 +14,6 @@ def mahrajon():
     print("Игра: угадай число от 1 до 100. Если не угадаешь — сам знаешь кто 😏")
 
     secret_number = random.randint(1, 100)
-    # print(secret_number)  # пока оставим для отладки
     attempts = 0
     low = 1
     high = 100
@@ -33,4 +32,5 @@ def mahrajon():
             print("Перебор, попробуй меньше ↓")
             high = guess - 1
 
-mahrajon()
+if __name__ == "__main__":
+    mahrajon()
