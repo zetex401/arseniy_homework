@@ -1,5 +1,15 @@
 import random
 
+def get_valid_number(min_val, max_val):
+    while True:
+        try:
+            num = int(input(f"Вводи че думаешь (от {min_val} до {max_val}): "))
+            if min_val <= num <= max_val:
+                return num
+            print(f"Дурак считать не умеешь чтоли {min_val} до {max_val}!")
+        except ValueError:
+            print("Писло чеши вводи не перди!")
+
 def mahrajon():
     print("Давай угадай немощный от 1 до 100, не сможешь значит ты лох!")
 
@@ -10,7 +20,8 @@ def mahrajon():
     high = 100
 
     while True:
-        guess = int(input(f"Вводи че думаешь (от {low} до {high}): "))
+        guess = get_valid_number(low, high)
+
         attempts += 1
 
         if guess == secret_number:
